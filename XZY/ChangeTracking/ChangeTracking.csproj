@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9CB98608-7447-4D94-929A-016417CEE6CE}</ProjectGuid>
+    <ProjectGuid>{AA448889-B4A7-418B-9ACE-B7560B6E1BD4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Dal</RootNamespace>
-    <AssemblyName>Dal</AssemblyName>
+    <RootNamespace>ChangeTracking</RootNamespace>
+    <AssemblyName>ChangeTracking</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -47,29 +47,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntityContext.cs" />
-    <Compile Include="Migrations\201802231101327_SimpleEntity.cs" />
-    <Compile Include="Migrations\201802231101327_SimpleEntity.Designer.cs">
-      <DependentUpon>201802231101327_SimpleEntity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model\SimpleEntity.cs" />
+    <Compile Include="Change.cs" />
+    <Compile Include="ChangeSet.cs" />
+    <Compile Include="Delete.cs" />
+    <Compile Include="KeyAttributeNotFoundException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateStack.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201802231101327_SimpleEntity.resx">
-      <DependentUpon>201802231101327_SimpleEntity.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ChangeTracking\ChangeTracking.csproj">
-      <Project>{aa448889-b4a7-418b-9ace-b7560b6e1bd4}</Project>
-      <Name>ChangeTracking</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
